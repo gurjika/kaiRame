@@ -119,70 +119,25 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             var buttonNumber = 0
             val handler = Handler()
             when (clickedView.id) {
-                R.id.button -> {
-                    button1.text = symbols[random[0]]
-                    buttonNumber = 1
-                }
-                R.id.button2 -> {
-                    button2.text = symbols[random[1]]
-                    buttonNumber = 2
-                }
-                R.id.button3 -> {
-                    buttonNumber = 3
-                    button3.text = symbols[random[2]]
-                }
-                R.id.button4 -> {
-                    buttonNumber = 4
-                    button4.text = symbols[random[3]]
-                }
-                R.id.button5 -> {
-                    buttonNumber = 5
-                    button5.text = symbols[random[4]]
-                }
-                R.id.button6 -> {
-                    buttonNumber = 6
-                    button6.text = symbols[random[5]]
-                }
-                R.id.button7 -> {
-                    buttonNumber = 7
-                    button7.text = symbols[random[6]]
-                }
-                R.id.button8 -> {
-                    buttonNumber = 8
-                    button8.text = symbols[random[7]]
-                }
-                R.id.button9 -> {
-                    buttonNumber = 9
-                    button9.text = symbols[random[8]]
-                }
-                R.id.button10 -> {
-                    buttonNumber = 10
-                    button10.text = symbols[random[9]]
-                }
-                R.id.button11 -> {
-                    buttonNumber = 11
-                    button11.text = symbols[random[10]]
-                }
-                R.id.button12 -> {
-                    buttonNumber = 12
-                    button12.text = symbols[random[11]]
-                }
-                R.id.button13 -> {
-                    buttonNumber = 13
-                    button13.text = symbols[random[12]]
-                }
-                R.id.button14 -> {
-                    buttonNumber = 14
-                    button14.text = symbols[random[13]]
-                }
-                R.id.button15 -> {
-                    buttonNumber = 15
-                    button15.text = symbols[random[14]]
-                }
-                R.id.button16 -> {
-                    buttonNumber = 16
-                    button16.text = symbols[random[15]]
-                }
+                    R.id.button -> buttonNumber = 1
+                    R.id.button2-> buttonNumber = 2
+                    R.id.button3 -> buttonNumber = 3
+                    R.id.button4 -> buttonNumber = 4
+                    R.id.button5 -> buttonNumber = 5
+                    R.id.button6 -> buttonNumber = 6
+                    R.id.button7 -> buttonNumber = 7
+                    R.id.button8 -> buttonNumber = 8
+                    R.id.button9 -> buttonNumber = 9
+                    R.id.button10 -> buttonNumber = 10
+                    R.id.button11 -> buttonNumber = 11
+                    R.id.button12 -> buttonNumber = 12
+                    R.id.button13 -> buttonNumber = 13
+                    R.id.button14 -> buttonNumber = 14
+                    R.id.button15 -> buttonNumber = 15
+                    R.id.button16 -> buttonNumber = 16
+            }
+            when(buttonNumber){
+                buttonNumber -> array[buttonNumber-1].text = symbols[random[buttonNumber-1]]
             }
 
             clickedView.setBackgroundColor(Color.GRAY)
@@ -216,27 +171,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun check(symbol: String, Number: Int):Boolean {
         var compare = ""
         when(Number){
-
-            1 -> compare = button1.text.toString()
-            2 -> compare = button2.text.toString()
-            3 -> compare = button3.text.toString()
-            4 -> compare = button4.text.toString()
-            5 -> compare = button5.text.toString()
-            6 -> compare = button6.text.toString()
-            7 -> compare = button7.text.toString()
-            8 -> compare = button8.text.toString()
-            9 -> compare = button9.text.toString()
-            10 -> compare = button10.text.toString()
-            11 -> compare = button11.text.toString()
-            12 -> compare = button12.text.toString()
-            13 -> compare = button13.text.toString()
-            14 -> compare = button14.text.toString()
-            15 -> compare = button15.text.toString()
-            16 -> compare = button16.text.toString()
-
+            Number -> compare = array[Number-1].text.toString()
         }
         return compare == symbol
-
     }
     private fun defineRandom(){
         for(k in 0..15){
